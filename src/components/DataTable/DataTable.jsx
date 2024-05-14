@@ -12,25 +12,10 @@ import {
   Tr,
 } from "@chakra-ui/react";
 import "./DataTable.css"
-import React, { useEffect, useState } from "react";
+import React from "react";
 
-export const DataTable = () => {
-  const [feedbacks, setFeedbacks] = useState([]);
-  let getData=()=>{
-     let items = JSON.parse(localStorage.getItem("fullData"));
-    if (items) {
-     setFeedbacks(items);
-    }
-  }
-  useEffect(() => {
-    getData()
-    window.addEventListener('storage', getData);
-
-    return () => {
-      // Clean up listener
-      window.removeEventListener('storage', getData)}
-
-  },[]);
+export const DataTable = ({feedbacks}) => {
+  
   return (
     <Box width="100%" margin="auto"  marginTop="4%">
       {feedbacks?.length>0?<TableContainer>
@@ -49,7 +34,7 @@ export const DataTable = () => {
           </Thead>
           <Tbody>
             {feedbacks?.map((el,index)=>{
-              return<Tr key={el}>
+              return<Tr key={index}>
               <Td textAlign="center">{el.name}</Td>
               <Td textAlign="center">{el.email}</Td>
               <Td textAlign="center">{el.phone}</Td>

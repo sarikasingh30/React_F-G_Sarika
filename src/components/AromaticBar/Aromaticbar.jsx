@@ -11,20 +11,10 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import "./Aromaticbar.css"
-import React, { useState } from "react";
+import React from "react";
 import { Content } from "./Content";
-export const Aromaticbar = () => {
+export const Aromaticbar = ({data,setData}) => {
   const toast = useToast();
-  const [data, setData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    a1: "",
-    a2: "",
-    a3: "",
-    a4: "",
-    review: ""
-  });
   function handleChange(e) {
     setData({ ...data, [e.target.name]: e.target.value });
   }
@@ -73,7 +63,8 @@ export const Aromaticbar = () => {
         duration: 9000,
         isClosable: true,
       });
-    fullData.push(data)
+    fullData=[...fullData,data]
+    // console.log(fullData)
     localStorage.setItem(`fullData`, JSON.stringify(fullData))
     }
     setData({name: "",
