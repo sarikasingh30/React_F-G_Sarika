@@ -1,0 +1,34 @@
+@keyframes shake {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    25%, 75% {
+      transform: translateX(-10px);
+    }
+    50% {
+      transform: translateX(10px);
+    }
+  }
+
+  .shake-heading {
+    font-weight: bold;
+    color:red;
+    animation: shake 0.5s infinite ease-in-out;
+  }
+
+  @keyframes fadeInBackground {
+    0% {
+      background-color: #ffcccb;
+    }
+    50% {
+      background-color: #83f38e;
+    }
+    100% {
+      background-color: #ffcccb;
+    }
+  }
+
+  .fadeInBack {
+
+    animation: fadeInBackground 4s infinite linear;
+  }

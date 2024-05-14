@@ -11,9 +11,8 @@ import {
   export function Navbar() {
   
     return (
-      <Box>
+      <Box bg="#FFEFEF">
         <Flex
-          bg={useColorModeValue('white', 'gray.800')}
           color={useColorModeValue('gray.600', 'white')}
           minH={'60px'}
           py={{ base: 2 }}
@@ -24,8 +23,8 @@ import {
           
           <Flex flex={{ base: 1 }}>
             <Image boxSize='50px' src={khanaApp}/>
-            <Heading as='h2' size='xl'>KHAANA KHAJANA</Heading>
-            <Heading as='h6' size='md'>Dil Se...</Heading>
+            <Heading as='h2' size='xl' pl="3%">KHAANA KHAJANA</Heading>
+            <Heading as='h6' size='md' >Dil Se...</Heading>
           </Flex>
   
           

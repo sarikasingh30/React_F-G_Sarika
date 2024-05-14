@@ -5,11 +5,11 @@ import { DataTable } from "../DataTable/DataTable";
 
 export const MainSection = () => {
   return (
-    <Flex width="100%" justifyContent="center" margin="auto" marginTop="5%">
+    <Flex width="100%" justifyContent="center" margin="auto" >
       <Tabs variant="unstyled" width="100%" >
         <TabList>
-          <Tab _selected={{ color: "white", bg: "blue.500" }} width="50%">AROMATIC BAR</Tab>
-          <Tab _selected={{ color: "white", bg: "green.400" }} width="50%">DATA TABLE</Tab>
+          <Tab _selected={{ color: "white", bg: "blue.500",fontWeight:"bold" }} width="50%">AROMATIC BAR</Tab>
+          <Tab _selected={{ color: "white", bg: "blue.500", fontWeight:"bold" }} width="50%">DATA TABLE</Tab>
         </TabList>
         <TabPanels>
           <TabPanel>
