@@ -15,16 +15,25 @@ import "./DataTable.css"
 import React, { useEffect, useState } from "react";
 
 export const DataTable = () => {
-  const [feedbacks, setFeedbacks] = useState([] );
-  useEffect(() => {
-    const items = JSON.parse(localStorage.getItem("fullData"));
+  const [feedbacks, setFeedbacks] = useState([]);
+  let getData=()=>{
+     let items = JSON.parse(localStorage.getItem("fullData"));
     if (items) {
      setFeedbacks(items);
     }
-  }, []);
+  }
+  useEffect(() => {
+    getData()
+    window.addEventListener('storage', getData);
+
+    return () => {
+      // Clean up listener
+      window.removeEventListener('storage', getData)}
+
+  },[]);
   return (
     <Box width="100%" margin="auto"  marginTop="4%">
-      {feedbacks.length>0?<TableContainer>
+      {feedbacks?.length>0?<TableContainer>
         <Table variant="striped" colorScheme="blue">
           <TableCaption>Here Are Some Feedbacks</TableCaption>
           <Thead className="fadeInBack">
@@ -40,7 +49,7 @@ export const DataTable = () => {
           </Thead>
           <Tbody>
             {feedbacks?.map((el,index)=>{
-              return<Tr key={el.email}>
+              return<Tr key={el}>
               <Td textAlign="center">{el.name}</Td>
               <Td textAlign="center">{el.email}</Td>
               <Td textAlign="center">{el.phone}</Td>

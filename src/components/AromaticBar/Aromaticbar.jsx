@@ -11,7 +11,7 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import "./Aromaticbar.css"
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Content } from "./Content";
 export const Aromaticbar = () => {
   const toast = useToast();
@@ -31,10 +31,8 @@ export const Aromaticbar = () => {
   const handleRadioButton = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
-  useEffect(() => {
-    console.log(data);
-  });
   let fullData=JSON.parse(localStorage.getItem("fullData"))||[]
+
   const handleSubmit = (e) => {
     e.preventDefault();
     let isValid=true
@@ -138,7 +136,7 @@ export const Aromaticbar = () => {
           return (
             <FormControl isRequired key={ele?.name}>
               <FormLabel>{ele?.label}</FormLabel>
-              <RadioGroup colorScheme="green">
+              <RadioGroup colorScheme="green" defaultValue="">
                 <Stack spacing={5} direction="row">
                   <Radio
                     type="radio"
