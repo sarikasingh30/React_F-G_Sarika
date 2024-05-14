@@ -15,12 +15,18 @@ import React from "react";
 import { Content } from "./Content";
 export const Aromaticbar = ({data,setData}) => {
   const toast = useToast();
+
+
   function handleChange(e) {
     setData({ ...data, [e.target.name]: e.target.value });
   }
+
+
   const handleRadioButton = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
+
+  // getting data from local storage
   let fullData=JSON.parse(localStorage.getItem("fullData"))||[]
 
   const handleSubmit = (e) => {
@@ -67,13 +73,9 @@ export const Aromaticbar = ({data,setData}) => {
     // console.log(fullData)
     localStorage.setItem(`fullData`, JSON.stringify(fullData))
     }
-    setData({name: "",
+    setData({...data,name: "",
     email: "",
     phone: "",
-    a1: "",
-    a2: "",
-    a3: "",
-    a4: "",
     review: ""})
   }
   return (
