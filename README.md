@@ -8,7 +8,7 @@
 
  Frontend (React)
 
-## Deplolyed App
+## Deployed App
 
  Frontend: https://react-f-g-sarika.vercel.app/
 
