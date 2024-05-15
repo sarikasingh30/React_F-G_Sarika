@@ -33,7 +33,19 @@ export const Aromaticbar = ({data,setData}) => {
     e.preventDefault();
     let isValid=true
     for (const [key, value] of Object.entries(data)) {
-      if (key === "email") {
+      if (key === "name") {
+        if (!/(^[a-zA-Z][a-zA-Z\s]{0,20}[a-zA-Z]$)/.test(value)){
+          isValid=false
+          toast({
+            title: "Error...",
+            description: "Enter Only Characters in Customer's Name",
+            status: "error",
+            duration: 9000,
+            isClosable: true,
+          });
+        }
+      }
+      else if (key === "email") {
         if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)){
           isValid=false
           toast({
@@ -91,6 +103,7 @@ export const Aromaticbar = ({data,setData}) => {
         <FormControl isRequired>
           <FormLabel>Customer Name</FormLabel>
           <Input
+            type="String"
             placeholder="Customer Name"
             name="name"
             value={data.name}
