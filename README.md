@@ -8,14 +8,15 @@
 
  Frontend (React)
 
-## Deplolyed App
+## Deployed App
 
  Frontend: https://react-f-g-sarika.vercel.app/
 
 ## Video Walkthrough of the project
 
-  <video width="100%" height="100%" controls>
-  <source src="videodemo.mp4" type="video/mp4">
+[DemoVideo](https://drive.google.com/file/d/1BgIy5mimJMolWCA2BaIxuPWnGSHTxJQt/view?usp=sharing)
+ <video width="100%" height="60%" controls>
+   <source src="videodemo.mp4" type="video/mp4">
 </video>
 
 ## Features
